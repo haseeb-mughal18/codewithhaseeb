@@ -25,7 +25,7 @@ export default function About() {
             <strong>Location</strong>Karachi, Pakistan
           </div>
           <div class="highlight">
-            <strong>Languages</strong>JSX/TSX, Kotlin, Java
+            <strong>Languages</strong>JavaScript, TypeScript, Kotlin, Java
           </div>
           <div class="highlight">
             <strong>Availability</strong>Open to opportunities

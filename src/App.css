@@ -741,3 +741,33 @@ section {
 .skill-bar-item.visible .skill-bar-fill {
   transform: scaleX(1);
 }
+
+/* MOBILE RESPONSIVE - About Section */
+@media (max-width: 768px) {
+  #about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-visual {
+    padding-top: 0;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 20px;
+  }
+
+  .about-body {
+    font-size: 0.78rem;
+  }
+}
