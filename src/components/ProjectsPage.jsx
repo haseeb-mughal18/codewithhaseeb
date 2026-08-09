@@ -1,90 +1,63 @@
-// import { projects } from "../data/projects";
-
-// export default function ProjectsPage({ onSelectProject, onBack }) {
-//   return (
-//     <section className="projects-page">
-//       <button className="btn-ghost back-btn" onClick={onBack}>
-//         ← Back
-//       </button>
-//       <h2 className="section-title">All Projects</h2>
-//       <div className="projects-grid">
-//         {projects.map((project) => (
-//           <div
-//             key={project.id}
-//             className="project_card"
-//             onClick={() => onSelectProject(project.id)}
-//           >
-//             <div className="project_image">
-//               <img src={project.image} alt={project.title} />
-//             </div>
-
-//             <div className="project_content">
-//               <h3>{project.title}</h3>
-
-//               <p>{project.summary}</p>
-
-//               <div className="project_tags">
-//                 {project.tags.map((tag) => (
-//                   <span key={tag}>{tag}</span>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
+import Reveal from "./Reveal";
+import { IconArrowLeft, IconArrowRight } from "./Icons";
 import { projects } from "../data/projects";
 
 export default function ProjectsPage({ onSelectProject, onBack }) {
   return (
-    <section className="pl-page">
+    <section className="subpage">
+      <div className="wrap">
+        <button type="button" className="back-btn" onClick={onBack}>
+          <IconArrowLeft />
+          Move Back
+        </button>
 
-      <button className="pl-back-btn" onClick={onBack}>
-         Back to Portfolio
-      </button>
+        <div className="sec-title-wrap">
+          <div className="sec-watermark">WORKS</div>
+          <h2 className="sec-title">
+            ALL <span>PROJECTS</span>
+          </h2>
+          <p className="subpage-lead" style={{ marginTop: 18 }}>
+            A collection of mobile applications I've designed and developed
+            using React Native, Kotlin and modern backend technologies.
+          </p>
+        </div>
 
-      <div className="section-header">
-        <h2 className="section-title">All Projects</h2>
+        <div className="pl-grid">
+          {projects.map((project, i) => (
+            <Reveal
+              as="button"
+              key={project.id}
+              index={i}
+              type="button"
+              className="pl-card"
+              onClick={() => onSelectProject(project.id)}
+            >
+              <div className="pl-left">
+                <div className="pl-app-icon">
+                  <img src={project.image} alt="" loading="lazy" />
+                </div>
 
-        <p className="pl-subtitle">
-          A collection of mobile applications I've designed and developed
-          using React Native, Kotlin and modern backend technologies.
-        </p>
-      </div>
+                <div className="pl-info">
+                  <h3>{project.title}</h3>
+                  <span className="pl-company">{project.company}</span>
 
-      <div className="pl-grid">
-        {projects.map((project) => (
-          <article
-            key={project.id}
-            className="pl-card"
-            onClick={() => onSelectProject(project.id)}
-          >
-            <div className="pl-image">
-              <img src={project.image} alt={project.title} />
-            </div>
+                  <div className="pl-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
 
-            <div className="pl-content">
-
-              <h3>{project.title}</h3>
-
-              <p>{project.summary}</p>
-
-              <div className="pl-tags">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+                  <p>{project.summary}</p>
+                </div>
               </div>
 
-              <span className="pl-view-link">
-                View Case Study →
+              <span className="pl-open">
+                View Project
+                <IconArrowRight />
               </span>
-
-            </div>
-          </article>
-        ))}
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

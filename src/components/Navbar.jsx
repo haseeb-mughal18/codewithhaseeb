@@ -1,37 +1,67 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function Navbar() {
+const LINKS = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#resume", label: "Resume" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#contact", label: "Contact" },
+  { href: "#blog", label: "Blog" },
+];
+
+export default function Navbar({ onHome, isSubPage = false }) {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  // On a sub page the hash links have no targets — send the user home first.
+  const handleClick = (event, href) => {
+    setOpen(false);
+    if (!isSubPage) return;
+    event.preventDefault();
+    onHome?.(href);
+  };
 
   return (
-    <nav className={scrolled ? "scrolled" : ""}>
-      <div className="nav-logo">CodeWithHaseeb</div>
-
+    <header className={`topnav${scrolled || open ? " scrolled" : ""}`}>
       <button
-        className={`nav-hamburger ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
+        type="button"
+        className="brand"
+        onClick={() => {
+          setOpen(false);
+          onHome?.("#hero");
+        }}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        HASEEB<span>MUGHAL</span>.
       </button>
 
-      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
-        <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-        <li><a href="#about" onClick={closeMenu}>About</a></li>
+      <ul className={open ? "open" : ""}>
+        {LINKS.map((link) => (
+          <li key={link.href}>
+            <a href={link.href} onClick={(e) => handleClick(e, link.href)}>
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
-    </nav>
+
+      <button
+        type="button"
+        className={`nav-burger${open ? " open" : ""}`}
+        aria-label="Toggle menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+    </header>
   );
 }
