@@ -1,4 +1,4 @@
-import heroImg from "../assets/haseeb-mughal-image.jpeg";
+import heroImg from "../assets/MyImage.jpg";
 import { IconArrowRight } from "./Icons";
 
 export default function Hero({ onViewProjects }) {

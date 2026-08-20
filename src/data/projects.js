@@ -3,7 +3,7 @@ export const categories = ["All", "Mobile Apps", "Android Native", "UI Design"];
 export const projects = [
   {
     id: "Doctor-Appointment-App",
-    title: "Doctor Appointment App",
+    title: "Appoint Me",
     company: "Tech Adviser Pvt Ltd",
     category: "Mobile Apps",
     summary:
@@ -14,7 +14,7 @@ export const projects = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHUVuR4n-IHW2oIIIF1XWuLViFGM982n5WQ-ZcfMIs3tQlt20iGvPFKSA&s=10",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "",
   },
   {
     id: "Pakthekedaar",
@@ -27,9 +27,9 @@ export const projects = [
       "PakThekedaar is a smart procurement platform that simplifies how contractors, builders, homeowners, and industrial buyers source construction materials and tools. Browse and request quotations for steel, cement, tiles, plumbing, electrical items, paints, chemicals, hardware, safety gear, and industrial tools — all in one app. Built with React Native and Redux, backed by a REST API layer for catalog, quotation, and order management.",
     tags: ["React Native", "JavaScript", "Redux", "REST API"],
     image:
-      "https://files.pakthekedaar.com/Advertisement_Slider/1_20260506085242-hammad1(1)(1).png",
+      "https://play-lh.googleusercontent.com/UpZofF1S1PRucEmdshDCCk2ORrPzkqL1Imly_cYxQ_PnmmIG0eQf8D2GzmcVmTclighvX3-NBmP8VzOsy7jpoA=w480-h960-rw",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.pakthekedaar",
   },
   {
     id: "ReveloVox",
@@ -44,7 +44,7 @@ export const projects = [
     image:
       "https://play-lh.googleusercontent.com/tD4-dpSf7d-MZ6w5SGP0iInUgSvuQDs70x94YImYY9ym8-3BpFrybL7EZWxp1UQST8RgP3RDKx4mGQ7Hc6FM=w480-h960-rw",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.stresschecker",
   },
   {
     id: "Time-Management-App",
@@ -59,7 +59,7 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=800&q=80",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "",
   },
   {
     id: "Gofit",
@@ -74,7 +74,7 @@ export const projects = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_-0sf3U2NFU_HbUwVEP5FTxT9K4gMvaNW6MJrrGeThA&s=10",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "",
   },
   {
     id: "See",
@@ -89,7 +89,7 @@ export const projects = [
     image:
       "https://play-lh.googleusercontent.com/0KY4xk8bUYkhZFOGBan-49MB8kIJUDk8IgTgpWXV87QFLXpsorOWDJ3n0ZB0GwaYnjvmxZBnaIPTutcfHIFTln4=w480-h960-rw",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.techadwiser.see",
   },
   {
     id: "Cafe-App",
@@ -104,7 +104,7 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "",
   },
   {
     id: "Barber-Appointment-App",
@@ -119,7 +119,7 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "",
   },
   {
     id: "Store-Perfect",
@@ -134,6 +134,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80",
     github: "",
-    liveUrl: "",
+    playStoreUrl: "",
   },
 ];

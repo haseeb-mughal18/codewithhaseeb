@@ -2,7 +2,6 @@ import Reveal from "./Reveal";
 import SectionTitle from "./SectionTitle";
 import { IconDownload } from "./Icons";
 import { personalInfo, stats } from "../data/resume";
-import { contactDetails } from "../data/socials";
 
 export default function About() {
   return (
@@ -31,9 +30,8 @@ export default function About() {
 
             <a
               className="btn-yellow"
-              href={contactDetails.websiteUrl}
-              target="_blank"
-              rel="noreferrer"
+              href={`${import.meta.env.BASE_URL}Haseeb-Mughal-Resume.pdf`}
+              download="Haseeb-Mughal-Resume.pdf"
             >
               Download CV
               <IconDownload />

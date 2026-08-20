@@ -37,7 +37,32 @@ export const IconSearch = (props) => (
     <line x1="21" y1="21" x2="16.65" y2="16.65" />
   </svg>
 );
-
+export const IconPlayStore = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    width="14"
+    height="14"
+    aria-hidden="true"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M3.5 2.7c-.3.3-.5.8-.5 1.4v15.8c0 .6.2 1.1.5 1.4L13.2 12 3.5 2.7z"
+    />
+    <path
+      fill="currentColor"
+      d="M14.1 12.9 5.2 21.4c.3.1.7.1 1.1-.1l10.4-5.9-2.6-2.5z"
+    />
+    <path
+      fill="currentColor"
+      d="M14.1 11.1 5.2 2.6c.3-.1.7-.1 1.1.1l10.4 5.9-2.6 2.5z"
+    />
+    <path
+      fill="currentColor"
+      d="M18 9.3 15.2 11l-2.6 1 2.6 2.5 2.8 1.7 2.8-1.7c.8-.5.8-1.6 0-2.1L18 9.3z"
+    />
+  </svg>
+);
 export const IconSend = (props) => (
   <svg {...base} {...props}>
     <line x1="22" y1="2" x2="11" y2="13" />

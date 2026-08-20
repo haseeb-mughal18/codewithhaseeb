@@ -1,10 +1,13 @@
 import { IconArrowLeft, IconArrowRight } from "./Icons";
 import { projects } from "../data/projects";
+import playStoreBadge from "../assets/google-play.png";
 
 export default function ProjectDetail({ projectId, onBack }) {
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) return null;
+
+  const isPlayStore = project.liveUrl?.includes("play.google.com");
 
   return (
     <section className="subpage">
@@ -20,7 +23,16 @@ export default function ProjectDetail({ projectId, onBack }) {
           </div>
 
           <div>
-            <span className="pd-label">Featured Project</span>
+            <div className="pd-label-row">
+              <span className="pd-label">Featured Project</span>
+
+              {project.playStoreUrl && (
+                <span className="live-status">
+                  <span className="live-dot" />
+                  {isPlayStore ? "Live on Google Play" : "Live"}
+                </span>
+              )}
+            </div>
 
             <h1 className="pd-title">{project.title}</h1>
 
@@ -32,7 +44,7 @@ export default function ProjectDetail({ projectId, onBack }) {
               ))}
             </div>
 
-            {(project.github || project.liveUrl) && (
+            {(project.github || project.playStoreUrl) && (
               <div className="pd-actions">
                 {project.github && (
                   <a
@@ -46,15 +58,15 @@ export default function ProjectDetail({ projectId, onBack }) {
                   </a>
                 )}
 
-                {project.liveUrl && (
+                {project.playStoreUrl && !isPlayStore && (
                   <a
-                    href={project.liveUrl}
+                    href={project.playStoreUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="btn-outline"
                   >
-                    Live Demo
-                    <IconArrowRight />
+                    <span className="pd-google-play-text">Get it on Google Play</span>
+                    <img src={playStoreBadge} alt="Get it on Google Play" className="pd-google-play-button" />
                   </a>
                 )}
               </div>
