@@ -40,8 +40,8 @@ a {
 }
 
 ::selection {
-  background: var(--yellow);
-  color: #000;
+  background: var(--primary);
+  color: #fff;
 }
 
 #root {
