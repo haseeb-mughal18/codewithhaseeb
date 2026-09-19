@@ -1,16 +1,32 @@
 :root {
-  --bg: #161616;
-  --bg2: #1d1d1d;
-  --card: #202020;
-  --yellow: #f5b400;
-  --yellow2: #ffcc33;
-  --text: #f2f2f2;
-  --muted: #9a9a9a;
-  --border: #2e2e2e;
-
-  --font-head: 'Anton', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-
+  /* Deep navy backgrounds */
+  --bg: #020817;
+  --bg2: #030B1C;
+  --bg3: #050D20;
+  --card: #081225;
+  --card2: #0A1428;
+  
+  /* Purple accent colors */
+  --primary: #6C4DF6;
+  --primary-light: #7C5CFF;
+  --primary-bright: #8B5CF6;
+  --primary-glow: rgba(124, 92, 255, 0.20);
+  --primary-lighter: #A78BFA;
+  
+  /* Text colors */
+  --text: #FFFFFF;
+  --text-secondary: #F8FAFC;
+  --muted: #94A3B8;
+  --muted-dark: #64748B;
+  
+  /* Borders */
+  --border: rgba(148, 163, 184, 0.15);
+  --border-light: rgba(148, 163, 184, 0.08);
+  
+  /* Fonts */
+  --font-head: 'Inter', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  
   color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,8 +56,8 @@ a {
 }
 
 ::selection {
-  background: var(--yellow);
-  color: #000;
+  background: var(--primary);
+  color: #fff;
 }
 
 #root {
