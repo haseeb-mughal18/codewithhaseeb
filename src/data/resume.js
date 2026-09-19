@@ -41,16 +41,16 @@ export const education = [
 ];
 
 export const skills = [
-  { name: "React Native", pct:  65},
-  { name: "TypeScript", pct: 60 },
-  { name: "Kotlin", pct: 70 },
-  { name: "Jetpack Compose", pct: 70 },
-  { name: "Reanimated", pct: 65 },
-  { name: "Firebase", pct: 80 },
-  { name: "REST APIs", pct: 70 },
+  { name: "React Native", pct: 95 },
+  { name: "TypeScript", pct: 90 },
+  { name: "Kotlin", pct: 85 },
+  { name: "Jetpack Compose", pct: 80 },
+  { name: "Reanimated", pct: 88 },
+  { name: "Firebase", pct: 82 },
+  { name: "REST APIs", pct: 78 },
   { name: "CI/CD", pct: 75 },
-  { name: "Redux", pct: 80 },
-  { name: "React.js", pct: 60 },
+  { name: "Redux", pct: 88 },
+  { name: "React.js", pct: 85 },
 ];
 
 export const stats = [
