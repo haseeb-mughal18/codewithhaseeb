@@ -1,15 +1,32 @@
-:root {
-  --bg: #161616;
-  --bg2: #1d1d1d;
-  --card: #202020;
-  --yellow: #f5b400;
-  --yellow2: #ffcc33;
-  --text: #f2f2f2;
-  --muted: #9a9a9a;
-  --border: #2e2e2e;
+/* ============================================================
+   HASEEB MUGHAL — PORTFOLIO
+   Base reset, fonts and design tokens.
+   Component styling lives in App.css.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-  --font-head: 'Anton', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+:root {
+  /* base surfaces */
+  --bg: #08080f;
+  --bg2: #0c0d16;
+  --card: rgba(255, 255, 255, 0.035);
+  --card-solid: #12131f;
+  --border: rgba(255, 255, 255, 0.09);
+
+  /* text */
+  --text: #f2f3f8;
+  --muted: #9a9db1;
+
+  /* accent — violet → blue, matches the reference design */
+  --accent: #8b7cf6;
+  --accent-deep: #6c5ce7;
+  --accent-2: #5b8cff;
+  --grad: linear-gradient(135deg, var(--accent-deep), var(--accent-2));
+
+  /* type */
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   color-scheme: dark;
   font-synthesis: none;
@@ -40,8 +57,8 @@ a {
 }
 
 ::selection {
-  background: var(--yellow);
-  color: #000;
+  background: var(--accent-deep);
+  color: #fff;
 }
 
 #root {
@@ -51,4 +68,13 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+  border-radius: 4px;
 }

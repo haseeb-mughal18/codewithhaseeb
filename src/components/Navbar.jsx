@@ -51,6 +51,17 @@ export default function Navbar({ onHome, isSubPage = false }) {
         ))}
       </ul>
 
+      <a
+        href="#contact"
+        className="nav-cta"
+        onClick={(e) => handleClick(e, "#contact")}
+      >
+        Hire Me
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+          <path d="M7 17L17 7M17 7H8M17 7v9" />
+        </svg>
+      </a>
+
       <button
         type="button"
         className={`nav-burger${open ? " open" : ""}`}

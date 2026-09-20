@@ -67,6 +67,6 @@ export const personalInfo = [
   { label: "Residence", value: "Karachi, Sindh" },
   { label: "Phone", value: "0305 2114394" },
   { label: "Nationality", value: "Pakistani" },
-  { label: "Email", value: ["haseebmughalmsb@gmail.com ", "haseebmughal305@outlook.com"] },
+  { label: "Email", value: ["haseebmughalmsb@gmail.com "] },
   { label: "Languages", value: "Urdu, English" },
 ];

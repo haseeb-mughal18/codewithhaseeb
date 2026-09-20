@@ -1,15 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import SectionTitle from "./SectionTitle";
 import { skills } from "../data/resume";
+import { badgeFor } from "../data/skillBadges";
 
-/** Ring fills from 0 to its target once the grid scrolls into view. */
-function SkillRing({ name, pct, active }) {
+/** Bar fills from 0 to its target once the grid scrolls into view. */
+function SkillBar({ name, pct, active }) {
+  const { Icon, cls } = badgeFor(name);
   return (
-    <div className="skill-ring-wrap">
-      <div className="skill-ring" style={{ "--pct": active ? pct : 0 }}>
-        <span className="pct">{pct}%</span>
+    <div className="skill-cell">
+      <div className="skill-top">
+        <span className={`skill-badge ${cls}`}>
+          <Icon />
+        </span>
+        <span className="skill-name">{name}</span>
+        <span className="skill-pct">{pct}%</span>
       </div>
-      <div className="skill-name">{name}</div>
+      <div className="skill-track">
+        <div className="skill-fill" style={{ width: active ? `${pct}%` : 0 }} />
+      </div>
     </div>
   );
 }
@@ -45,7 +53,7 @@ export default function Skills() {
 
         <div className="skills-grid" ref={gridRef}>
           {skills.map((skill) => (
-            <SkillRing key={skill.name} {...skill} active={active} />
+            <SkillBar key={skill.name} {...skill} active={active} />
           ))}
         </div>
       </div>

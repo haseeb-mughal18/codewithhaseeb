@@ -1,7 +1,9 @@
 import Reveal from "./Reveal";
 import SectionTitle from "./SectionTitle";
-import { IconDownload } from "./Icons";
+import { IconDownload, IconCalendar, IconLayers, IconSmartphone, IconHeart } from "./Icons";
 import { personalInfo, stats } from "../data/resume";
+
+const STAT_ICONS = [IconCalendar, IconLayers, IconSmartphone, IconHeart];
 
 export default function About() {
   return (
@@ -24,7 +26,7 @@ export default function About() {
               ))}
               <div className="info-item">
                 <b>Website</b>
-                <span>haseebmughal18.github.io</span>
+                <span>haseebmughal18.github.io/codewithhaseeb</span>
               </div>
             </div>
 
@@ -39,12 +41,18 @@ export default function About() {
           </Reveal>
 
           <Reveal className="stats-grid" index={1}>
-            {stats.map((stat) => (
-              <div className="stat-box" key={stat.lbl}>
-                <div className="num">{stat.num}</div>
-                <div className="lbl">{stat.lbl}</div>
-              </div>
-            ))}
+            {stats.map((stat, i) => {
+              const Icon = STAT_ICONS[i % STAT_ICONS.length];
+              return (
+                <div className="stat-box" key={stat.lbl}>
+                  <div className="stat-icon">
+                    <Icon />
+                  </div>
+                  <div className="num">{stat.num}</div>
+                  <div className="lbl">{stat.lbl}</div>
+                </div>
+              );
+            })}
           </Reveal>
         </div>
       </div>
